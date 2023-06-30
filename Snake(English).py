@@ -1,20 +1,26 @@
+import os
 import pygame, random
 from os import path
 
 # Initialize the game and set the screen size
 WIDTH = 800
 HEIGHT = 600
-pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.init()
 pygame.display.set_caption('Snake')
 
 # Set up the music and sound effects
-mp3_dir = path.join(path.dirname(__file__), 'mp3')
-pygame.mixer.music.load(path.join(mp3_dir, "Andreas_Waldetoft_-_Comintern_Theme_Hearts_of_Iron_IV.mp3"
-                                  or "Andreas-Waldetoft-heavy-water.mp3"
-                                  or "Hearts of Iron IV OST — Song For the Children of WW2.mp3"))
-pygame.mixer.music.play()
-pygame.mixer.music.set_volume(0.1)
+#Function to play random music from folder
+def play_random_music():
+    music_folder = 'C:/snake/mp3'
+    music_files = os.listdir(music_folder)
+    random_music = random.choice(music_files)
+    music_path = os.path.join(music_folder, random_music)
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load(music_path)
+    pygame.mixer.music.play()
+    pygame.mixer.music.set_volume(0.1)
 
 ogg_dir = path.join(path.dirname(__file__), 'ogg')
 am = pygame.mixer.Sound(path.join(ogg_dir, 'collision.ogg'))
@@ -135,6 +141,7 @@ def gameloop():
     length = 2
     i = 0
     snake_list = []
+    play_random_music()
     
     # Set up the initial food position
     food = pygame.transform.scale(random.choice(food_img), (snake_block, snake_block))
@@ -155,7 +162,7 @@ def gameloop():
             create_mes('Press the "C" key to restart', WHITE, 200, 300, 'railwaycargorus', 35)
             create_mes('To finish the game, press "Q"', WHITE, 200, 350, 'railwaycargorus', 35)
             pygame.display.update()
-
+            
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
@@ -237,6 +244,7 @@ def gameloop():
 
         create_mes(f'Your score: {score}', WHITE, 10, 10, 'railwaycargorus', 20)
 
+        pygame.display.update()
         pygame.display.flip()
         clock.tick(FPS)
 
