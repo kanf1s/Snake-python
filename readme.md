@@ -8,9 +8,9 @@ You can change the code freely, but only post with my permission
 Installation: 
 1. Download all files
 2. Unpack to disk C
-3. Go to fonts for download and download RailwayCargoRus font
+3. Go to folder 'fonts for download' and download RailwayCargoRus font
 4. Open a workspace for you.
-5. Open Snake(English). py if you want to play with English, or open Snake(Russian). py if you want to play with Russian
+5. Open Snake(English).py if you want to play with English, or open Snake(Russian).py if you want to play with Russian
 6. Play
 
 Installation is simple:)
@@ -19,4 +19,8 @@ You can get help on the project by contacting me in telegram: https://t.me/nikit
 
 I support this project.
 
-This project uses the RailwayCargoRus ©Rones font(https://pikabu.ru/story/novaya_versiya_zheleznodorozhnogo_shrifta_9553353)
+This project uses the RailwayCargoRus font ©Rones (https://pikabu.ru/story/novaya_versiya_zheleznodorozhnogo_shrifta_9553353)
+This project uses music from the game Hearts of Iron 4, namely: 
+Andreas Waldetoft - Comintern Theme Hearts of Iron IV
+Andreas Waldetoft - Heavy Water
+Hearts of Iron IV OST — Song For the Children of WW2
