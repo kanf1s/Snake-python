@@ -252,4 +252,3 @@ def gameloop():
     quit()
 
 gameloop()
-
